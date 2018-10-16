@@ -1,0 +1,51 @@
+    Rest API /Web API
+    .Net Memory Cache
+    Redis Cache
+    Micro Services Architecture
+    .Net Core
+    NLog
+    Middleware
+
+
+https://github.com/schneidyang/JavaGuide/network/members
+
+https://www.zhihu.com/people/springtai-nan/posts 
+https://www.zhihu.com/people/javagao-ji-jia-gou-jin-jie/posts
+https://www.zhihu.com/people/javagao-ji-jin-jie-50/posts
+进击的程序员 | 如何用<em>开源项目</em>打造品牌价值？ - 码云 Gitee的文章 - 知乎
+https://zhuanlan.zhihu.com/p/32630760
+基于SpringBoot的开源项目：Guns-后台管理系统 - 海洋的文章 - 知乎
+https://zhuanlan.zhihu.com/p/30077658
+专为设计师而写的GitHub快速入门教程 
+http://www.ui.cn/detail/20957.html
+https://github.com/greatghoul/remote-working.git
+
+技术变化那么快，程序员如何做到不被淘汰？ - IT互联网Java的回答 - 知乎
+https://www.zhihu.com/question/281011633/answer/422192577
+Java编程---Spring框架七大模块 - IT互联网Java的文章 - 知乎
+https://zhuanlan.zhihu.com/p/40784174
+
+https://github.com/greatghoul/remote-working#books
+
+
+
+jdbc:mysql://127.0.0.1:3306/gunsdb?
+
+autoReconnect=true
+useUnicode=true
+characterEncoding=utf8
+zeroDateTimeBehavior=convertToNull
+
+zeroDateTimeBehavior=convertToNull
+useJDBCCompliantTimezoneShift=true 
+useLegacyDatetimeCode=false
+serverTimezone=UTC
+
+pecify the serverTimezone explicitly in the connection string.
+
+jdbc:mysql://localhost/db? 
+
+
+
+
+
