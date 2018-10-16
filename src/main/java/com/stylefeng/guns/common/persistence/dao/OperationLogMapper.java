@@ -5,7 +5,7 @@ import tk.mybatis.mapper.common.Mapper;
 
 /**
  * <p>
-  * 操作日志 Mapper 接口
+ * 操作日志 Mapper 接口
  * </p>
  *
  * @author stylefeng

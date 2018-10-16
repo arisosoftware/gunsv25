@@ -10,14 +10,14 @@ import com.stylefeng.guns.common.exception.BizExceptionEnum;
  */
 public class ErrorTip extends Tip {
 
-    public ErrorTip(int code, String message) {
-        super();
-        this.code = code;
-        this.message = message;
-    }
+	public ErrorTip(int code, String message) {
+		super();
+		this.code = code;
+		this.message = message;
+	}
 
-    public ErrorTip(BizExceptionEnum bizExceptionEnum) {
-        this.code = bizExceptionEnum.getCode();
-        this.message = bizExceptionEnum.getMessage();
-    }
+	public ErrorTip(BizExceptionEnum bizExceptionEnum) {
+		this.code = bizExceptionEnum.getCode();
+		this.message = bizExceptionEnum.getMessage();
+	}
 }

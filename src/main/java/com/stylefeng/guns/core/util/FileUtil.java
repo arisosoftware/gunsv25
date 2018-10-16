@@ -12,9 +12,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 public class FileUtil {
-	
+
 	private static Logger log = LoggerFactory.getLogger(FileUtil.class);
-	
+
 	/**
 	 * NIO way
 	 */

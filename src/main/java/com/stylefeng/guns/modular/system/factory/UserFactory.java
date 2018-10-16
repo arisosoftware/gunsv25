@@ -12,13 +12,13 @@ import org.springframework.beans.BeanUtils;
  */
 public class UserFactory {
 
-    public static User createUser(UserDto userDto){
-        if(userDto == null){
-            return null;
-        }else{
-            User user = new User();
-            BeanUtils.copyProperties(userDto,user);
-            return user;
-        }
-    }
+	public static User createUser(UserDto userDto) {
+		if (userDto == null) {
+			return null;
+		} else {
+			User user = new User();
+			BeanUtils.copyProperties(userDto, user);
+			return user;
+		}
+	}
 }

@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * <p>
-  * 通知表 Mapper 接口
+ * 通知表 Mapper 接口
  * </p>
  *
  * @author stylefeng
@@ -17,6 +17,6 @@ import java.util.Map;
  */
 public interface NoticeMapper extends Mapper<Notice> {
 
-    List<Map<String, Object>> list(@Param("condition") String condition);
+	List<Map<String, Object>> list(@Param("condition") String condition);
 
 }

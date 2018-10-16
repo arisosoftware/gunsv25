@@ -14,15 +14,16 @@ import java.util.Map;
  * @date 2017-05-21 11:34
  */
 @Component("error")
-public class GunsErrorView implements View{
+public class GunsErrorView implements View {
 
-    @Override
-    public String getContentType() {
-        return "text/html";
-    }
+	@Override
+	public String getContentType() {
+		return "text/html";
+	}
 
-    @Override
-    public void render(Map<String, ?> map, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        httpServletRequest.getRequestDispatcher("/global/error").forward(httpServletRequest,httpServletResponse);
-    }
+	@Override
+	public void render(Map<String, ?> map, HttpServletRequest httpServletRequest,
+			HttpServletResponse httpServletResponse) throws Exception {
+		httpServletRequest.getRequestDispatcher("/global/error").forward(httpServletRequest, httpServletResponse);
+	}
 }

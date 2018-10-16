@@ -8,13 +8,13 @@ package com.stylefeng.guns.common.constant.dictmap.base;
  */
 public class SystemDict extends AbstractDictMap {
 
-    @Override
-    public void init() {
+	@Override
+	public void init() {
 
-    }
+	}
 
-    @Override
-    protected void initBeWrapped() {
+	@Override
+	protected void initBeWrapped() {
 
-    }
+	}
 }

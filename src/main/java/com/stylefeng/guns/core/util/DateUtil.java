@@ -28,7 +28,6 @@ import org.apache.commons.lang3.time.DateUtils;
 
 public class DateUtil {
 
-
 	/**
 	 * 获取YYYY格式
 	 *
@@ -135,8 +134,7 @@ public class DateUtil {
 	 * @param s
 	 * @param e
 	 * @return boolean
-	 * @throws
-	 * @author luguosui
+	 * @throws @author luguosui
 	 */
 	public static boolean compareDate(String s, String e) {
 		if (parseDate(s) == null || parseDate(e) == null) {
@@ -151,7 +149,7 @@ public class DateUtil {
 	 * @return
 	 */
 	public static Date parseDate(String date) {
-		return parse(date,"yyyy-MM-dd");
+		return parse(date, "yyyy-MM-dd");
 	}
 
 	/**
@@ -160,7 +158,7 @@ public class DateUtil {
 	 * @return
 	 */
 	public static Date parseTime(String date) {
-		return parse(date,"yyyy-MM-dd HH:mm:ss");
+		return parse(date, "yyyy-MM-dd HH:mm:ss");
 	}
 
 	/**
@@ -170,7 +168,7 @@ public class DateUtil {
 	 */
 	public static Date parse(String date, String pattern) {
 		try {
-			return DateUtils.parseDate(date,pattern);
+			return DateUtils.parseDate(date, pattern);
 		} catch (ParseException e) {
 			e.printStackTrace();
 			return null;
@@ -211,14 +209,14 @@ public class DateUtil {
 	 * @return
 	 */
 	public static boolean isValidDate(String s, String pattern) {
-        return parse(s, pattern) != null;
+		return parse(s, pattern) != null;
 	}
 
 	public static int getDiffYear(String startTime, String endTime) {
 		DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
 		try {
-			int years = (int) (((fmt.parse(endTime).getTime() - fmt.parse(
-					startTime).getTime()) / (1000 * 60 * 60 * 24)) / 365);
+			int years = (int) (((fmt.parse(endTime).getTime() - fmt.parse(startTime).getTime()) / (1000 * 60 * 60 * 24))
+					/ 365);
 			return years;
 		} catch (Exception e) {
 			// 如果throw java.text.ParseException或者NullPointerException，就说明格式不对
@@ -236,8 +234,7 @@ public class DateUtil {
 	 */
 	public static long getDaySub(String beginDateStr, String endDateStr) {
 		long day = 0;
-		SimpleDateFormat format = new SimpleDateFormat(
-				"yyyy-MM-dd");
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		Date beginDate = null;
 		Date endDate = null;
 
@@ -293,6 +290,7 @@ public class DateUtil {
 
 	/**
 	 * 格式化Oracle Date
+	 * 
 	 * @param value
 	 * @return
 	 */

@@ -15,7 +15,6 @@ import com.stylefeng.guns.core.support.DateTimeKit;
 import com.stylefeng.guns.core.support.HexKit;
 import com.stylefeng.guns.core.support.StrKit;
 
-
 /**
  * 类型转换器
  * 
@@ -23,7 +22,6 @@ import com.stylefeng.guns.core.support.StrKit;
  * 
  */
 public class Convert {
-	
 
 	private Convert() {
 		// 静态类不可实例化
@@ -77,7 +75,7 @@ public class Convert {
 	 * 转换基本类型<br>
 	 * 将字符串转换为原始类型或包装类型
 	 * 
-	 * @param clazz 转换到的类，可以是原始类型类，也可以是包装类型类
+	 * @param clazz    转换到的类，可以是原始类型类，也可以是包装类型类
 	 * @param valueStr 被转换的字符串
 	 * @return 转换后的对象，如果非基本类型，返回null
 	 */
@@ -86,8 +84,9 @@ public class Convert {
 			return null;
 		}
 
-		if (StrKit.isBlank(valueStr)) return null;
-		
+		if (StrKit.isBlank(valueStr))
+			return null;
+
 		BasicType basicType = null;
 		try {
 			basicType = BasicType.valueOf(clazz.getSimpleName().toUpperCase());
@@ -97,45 +96,45 @@ public class Convert {
 		}
 
 		switch (basicType) {
-			case BYTE:
-				if (clazz == byte.class) {
-					return Byte.parseByte(valueStr);
-				}
-				return Byte.valueOf(valueStr);
-			case SHORT:
-				if (clazz == short.class) {
-					return Short.parseShort(valueStr);
-				}
-				return Short.valueOf(valueStr);
-			case INT:
-				return Integer.parseInt(valueStr);
-			case INTEGER:
-				return Integer.valueOf(valueStr);
-			case LONG:
-				if (clazz == long.class) {
-					return new BigDecimal(valueStr).longValue();
-				}
-				return Long.valueOf(valueStr);
-			case DOUBLE:
-				if (clazz == double.class) {
-					return new BigDecimal(valueStr).doubleValue();
-				}
-			case FLOAT:
-				if (clazz == float.class) {
-					return Float.parseFloat(valueStr);
-				}
-				return Float.valueOf(valueStr);
-			case BOOLEAN:
-				if (clazz == boolean.class) {
-					return Boolean.parseBoolean(valueStr);
-				}
-				return Boolean.valueOf(valueStr);
-			case CHAR:
-				return valueStr.charAt(0);
-			case CHARACTER:
-				return Character.valueOf(valueStr.charAt(0));
-			default:
-				return null;
+		case BYTE:
+			if (clazz == byte.class) {
+				return Byte.parseByte(valueStr);
+			}
+			return Byte.valueOf(valueStr);
+		case SHORT:
+			if (clazz == short.class) {
+				return Short.parseShort(valueStr);
+			}
+			return Short.valueOf(valueStr);
+		case INT:
+			return Integer.parseInt(valueStr);
+		case INTEGER:
+			return Integer.valueOf(valueStr);
+		case LONG:
+			if (clazz == long.class) {
+				return new BigDecimal(valueStr).longValue();
+			}
+			return Long.valueOf(valueStr);
+		case DOUBLE:
+			if (clazz == double.class) {
+				return new BigDecimal(valueStr).doubleValue();
+			}
+		case FLOAT:
+			if (clazz == float.class) {
+				return Float.parseFloat(valueStr);
+			}
+			return Float.valueOf(valueStr);
+		case BOOLEAN:
+			if (clazz == boolean.class) {
+				return Boolean.parseBoolean(valueStr);
+			}
+			return Boolean.valueOf(valueStr);
+		case CHAR:
+			return valueStr.charAt(0);
+		case CHARACTER:
+			return Character.valueOf(valueStr.charAt(0));
+		default:
+			return null;
 		}
 	}
 
@@ -144,7 +143,7 @@ public class Convert {
 	 * 如果给定的值为null，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -177,7 +176,7 @@ public class Convert {
 	 * 如果给定的值为null，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -210,7 +209,7 @@ public class Convert {
 	 * 如果给定的值为<code>null</code>，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -252,7 +251,7 @@ public class Convert {
 	 * 如果给定的值为<code>null</code>，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -294,7 +293,7 @@ public class Convert {
 	 * 如果给定的值为空，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -333,7 +332,7 @@ public class Convert {
 	 * 如果给定的值为空，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -374,7 +373,7 @@ public class Convert {
 	 * 转换为Integer数组<br>
 	 * 
 	 * @param isIgnoreConvertError 是否忽略转换错误，忽略则给值null
-	 * @param values 被转换的值
+	 * @param values               被转换的值
 	 * @return 结果
 	 */
 	public static Integer[] toIntArray(boolean isIgnoreConvertError, Object... values) {
@@ -391,8 +390,7 @@ public class Convert {
 		}
 		return ints;
 	}
-	
-	
+
 	/**
 	 * 转换为Integer数组<br>
 	 * 
@@ -402,7 +400,7 @@ public class Convert {
 	public static Integer[] toIntArray(String str) {
 		return toIntArray(",", str);
 	}
-	
+
 	/**
 	 * 转换为Integer数组<br>
 	 * 
@@ -422,7 +420,7 @@ public class Convert {
 		}
 		return ints;
 	}
-	
+
 	/**
 	 * 转换为String数组<br>
 	 * 
@@ -432,7 +430,7 @@ public class Convert {
 	public static String[] toStrArray(String str) {
 		return toStrArray("", str);
 	}
-	
+
 	/**
 	 * 转换为String数组<br>
 	 * 
@@ -449,7 +447,7 @@ public class Convert {
 	 * 如果给定的值为空，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -491,7 +489,7 @@ public class Convert {
 	 * 转换为Long数组<br>
 	 * 
 	 * @param isIgnoreConvertError 是否忽略转换错误，忽略则给值null
-	 * @param values 被转换的值
+	 * @param values               被转换的值
 	 * @return 结果
 	 */
 	public static Long[] toLongArray(boolean isIgnoreConvertError, Object... values) {
@@ -514,7 +512,7 @@ public class Convert {
 	 * 如果给定的值为空，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -556,7 +554,7 @@ public class Convert {
 	 * 转换为Double数组<br>
 	 * 
 	 * @param isIgnoreConvertError 是否忽略转换错误，忽略则给值null
-	 * @param values 被转换的值
+	 * @param values               被转换的值
 	 * @return 结果
 	 */
 	public static Double[] toDoubleArray(boolean isIgnoreConvertError, Object... values) {
@@ -579,7 +577,7 @@ public class Convert {
 	 * 如果给定的值为空，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -620,7 +618,7 @@ public class Convert {
 	 * 转换为Float数组<br>
 	 * 
 	 * @param isIgnoreConvertError 是否忽略转换错误，忽略则给值null
-	 * @param values 被转换的值
+	 * @param values               被转换的值
 	 * @return 结果
 	 */
 	public static <T> Float[] toFloatArray(boolean isIgnoreConvertError, Object... values) {
@@ -643,7 +641,7 @@ public class Convert {
 	 * String支持的值为：true、false、yes、ok、no，1,0 如果给定的值为空，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -660,22 +658,22 @@ public class Convert {
 		}
 		valueStr = valueStr.trim().toLowerCase();
 		switch (valueStr) {
-			case "true":
-				return true;
-			case "false":
-				return false;
-			case "yes":
-				return true;
-			case "ok":
-				return true;
-			case "no":
-				return false;
-			case "1":
-				return true;
-			case "0":
-				return false;
-			default:
-				return defaultValue;
+		case "true":
+			return true;
+		case "false":
+			return false;
+		case "yes":
+			return true;
+		case "ok":
+			return true;
+		case "no":
+			return false;
+		case "1":
+			return true;
+		case "0":
+			return false;
+		default:
+			return defaultValue;
 		}
 	}
 
@@ -695,7 +693,7 @@ public class Convert {
 	 * 转换为Boolean数组<br>
 	 * 
 	 * @param isIgnoreConvertError 是否忽略转换错误，忽略则给值null
-	 * @param values 被转换的值
+	 * @param values               被转换的值
 	 * @return 结果
 	 */
 	public static Boolean[] toBooleanArray(boolean isIgnoreConvertError, Object... values) {
@@ -717,8 +715,8 @@ public class Convert {
 	 * 转换为Enum对象<br>
 	 * 如果给定的值为空，或者转换失败，返回默认值<br>
 	 * 
-	 * @param clazz Enum的Class
-	 * @param value 值
+	 * @param clazz        Enum的Class
+	 * @param value        值
 	 * @param defaultValue 默认值
 	 * @return Enum
 	 */
@@ -759,7 +757,7 @@ public class Convert {
 	 * 如果给定的值为空，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -801,7 +799,7 @@ public class Convert {
 	 * 如果给定的值为空，或者转换失败，返回默认值<br>
 	 * 转换失败不会报错
 	 * 
-	 * @param value 被转换的值
+	 * @param value        被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
 	 */
@@ -844,7 +842,8 @@ public class Convert {
 		return toBigDecimal(value, null);
 	}
 
-	// ----------------------------------------------------------------------- 全角半角转换
+	// -----------------------------------------------------------------------
+	// 全角半角转换
 	/**
 	 * 半角转全角
 	 * 
@@ -858,7 +857,7 @@ public class Convert {
 	/**
 	 * 半角转全角
 	 * 
-	 * @param input String
+	 * @param input         String
 	 * @param notConvertSet 不替换的字符集合
 	 * @return 全角字符串.
 	 */
@@ -893,7 +892,7 @@ public class Convert {
 	/**
 	 * 替换全角为半角
 	 * 
-	 * @param text 文本
+	 * @param text          文本
 	 * @param notConvertSet 不替换的字符集合
 	 * @return 替换后的字符
 	 */
@@ -950,7 +949,7 @@ public class Convert {
 	/**
 	 * 十六进制转换字符串
 	 * 
-	 * @param hexStr Byte字符串(Byte之间无分隔符 如:[616C6B])
+	 * @param hexStr  Byte字符串(Byte之间无分隔符 如:[616C6B])
 	 * @param charset 编码 {@link Charset}
 	 * @return 对应的字符串
 	 */
@@ -1010,9 +1009,9 @@ public class Convert {
 	 * 给定字符串转换字符编码<br/>
 	 * 如果参数为空，则返回原字符串，不报错。
 	 * 
-	 * @param str 被转码的字符串
+	 * @param str           被转码的字符串
 	 * @param sourceCharset 原字符集
-	 * @param destCharset 目标字符集
+	 * @param destCharset   目标字符集
 	 * @return 转换后的字符串
 	 */
 	public static String convertCharset(String str, String sourceCharset, String destCharset) {
@@ -1058,7 +1057,8 @@ public class Convert {
 			}
 			s = p.replaceAll("(零.)*零$", "").replaceAll("^$", "零") + unit[0][i] + s;
 		}
-		return head + s.replaceAll("(零.)*零元", "元").replaceFirst("(零.)+", "").replaceAll("(零.)+", "零").replaceAll("^整$", "零元整");
+		return head + s.replaceAll("(零.)*零元", "元").replaceFirst("(零.)+", "").replaceAll("(零.)+", "零").replaceAll("^整$",
+				"零元整");
 	}
-	
+
 }

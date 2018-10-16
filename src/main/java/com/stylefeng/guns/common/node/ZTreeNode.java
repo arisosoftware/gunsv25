@@ -9,15 +9,15 @@ package com.stylefeng.guns.common.node;
  */
 public class ZTreeNode {
 
-	private Integer id;	//节点id
-	
-	private Integer pId;//父节点id
-	
-	private String name;//节点名称
-	
-	private Boolean open;//是否打开节点
-	
-	private Boolean checked;//是否被选中
+	private Integer id; // 节点id
+
+	private Integer pId;// 父节点id
+
+	private String name;// 节点名称
+
+	private Boolean open;// 是否打开节点
+
+	private Boolean checked;// 是否被选中
 
 	public Integer getId() {
 		return id;
@@ -66,8 +66,8 @@ public class ZTreeNode {
 	public void setChecked(Boolean checked) {
 		this.checked = checked;
 	}
-	
-	public static ZTreeNode createParent(){
+
+	public static ZTreeNode createParent() {
 		ZTreeNode zTreeNode = new ZTreeNode();
 		zTreeNode.setChecked(true);
 		zTreeNode.setId(0);

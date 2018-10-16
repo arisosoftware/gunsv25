@@ -73,17 +73,17 @@ spring:
 spring:
   profiles: dev
   datasource:
-      url: jdbc:mysql://127.0.0.1:3306/guns?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-      username: root
-      password:
+      url: jdbc:mysql://127.0.0.1:3306/gunsdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+      username: jason
+      password: password
       filters: log4j,wall,mergeStat
 
 #多数据源
 biz:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/biz?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-    username: root
-    password:
+    url: jdbc:mysql://127.0.0.1:3306/gunsBizdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    username: jason
+    password: password
 
 logging:
   level.root: info
@@ -99,9 +99,9 @@ logging:
 spring:
   profiles: produce
   datasource:
-      url: jdbc:mysql://127.0.0.1:3306/guns?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-      username: root
-      password:
+      url: jdbc:mysql://127.0.0.1:3306/gunsdb?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: jason
+      password: password
       filters: log4j,wall,mergeStat
 
 logging:

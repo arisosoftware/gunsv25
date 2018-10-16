@@ -5,7 +5,7 @@ import tk.mybatis.mapper.common.Mapper;
 
 /**
  * <p>
-  * 角色和菜单关联表 Mapper 接口
+ * 角色和菜单关联表 Mapper 接口
  * </p>
  *
  * @author stylefeng

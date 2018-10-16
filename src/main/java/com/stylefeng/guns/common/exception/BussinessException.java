@@ -6,18 +6,18 @@ package com.stylefeng.guns.common.exception;
  * @date 2016年11月12日 下午5:05:10
  */
 @SuppressWarnings("serial")
-public class BussinessException extends RuntimeException{
+public class BussinessException extends RuntimeException {
 
-	//友好提示的code码
+	// 友好提示的code码
 	private int friendlyCode;
-	
-	//友好提示
+
+	// 友好提示
 	private String friendlyMsg;
-	
-	//业务异常跳转的页面
+
+	// 业务异常跳转的页面
 	private String urlPath;
-	
-	public BussinessException(BizExceptionEnum bizExceptionEnum){
+
+	public BussinessException(BizExceptionEnum bizExceptionEnum) {
 		this.friendlyCode = bizExceptionEnum.getCode();
 		this.friendlyMsg = bizExceptionEnum.getMessage();
 		this.urlPath = bizExceptionEnum.getUrlPath();
@@ -46,5 +46,5 @@ public class BussinessException extends RuntimeException{
 	public void setUrlPath(String urlPath) {
 		this.urlPath = urlPath;
 	}
-	
+
 }

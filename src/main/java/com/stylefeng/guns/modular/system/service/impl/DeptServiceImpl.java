@@ -14,18 +14,18 @@ import java.util.List;
 @Transactional
 public class DeptServiceImpl implements IDeptService {
 
-    @Resource
-    DeptMapper deptMapper;
+	@Resource
+	DeptMapper deptMapper;
 
-    @Override
-    public void deleteDept(Integer deptId) {
-        Dept dept = deptMapper.selectByPrimaryKey(deptId);
-        Example example = new Example(Dept.class);
-        example.createCriteria().andLike("pids", "%[" + dept.getId() + "]%");
-        List<Dept> subDepts = deptMapper.selectByExample(example);
-        for (Dept temp : subDepts) {
-            deptMapper.deleteByPrimaryKey(temp);
-        }
-        deptMapper.deleteByPrimaryKey(deptId);
-    }
+	@Override
+	public void deleteDept(Integer deptId) {
+		Dept dept = deptMapper.selectByPrimaryKey(deptId);
+		Example example = new Example(Dept.class);
+		example.createCriteria().andLike("pids", "%[" + dept.getId() + "]%");
+		List<Dept> subDepts = deptMapper.selectByExample(example);
+		for (Dept temp : subDepts) {
+			deptMapper.deleteByPrimaryKey(temp);
+		}
+		deptMapper.deleteByPrimaryKey(deptId);
+	}
 }

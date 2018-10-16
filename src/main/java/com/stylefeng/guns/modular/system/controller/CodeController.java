@@ -7,10 +7,14 @@ import com.stylefeng.guns.common.exception.BizExceptionEnum;
 import com.stylefeng.guns.common.exception.BussinessException;
 import com.stylefeng.guns.core.template.config.ContextConfig;
 import com.stylefeng.guns.core.template.engine.SimpleTemplateEngine;
-import com.stylefeng.guns.core.template.engine.base.GunsTemplateEngine;
+
 import com.stylefeng.guns.core.util.ToolUtil;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+
+import java.io.FileNotFoundException;
+
+import org.beetl.core.exception.BeetlException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,42 +31,44 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/code")
 public class CodeController extends BaseController {
 
-    private String PREFIX = "/system/code/";
+	private String PREFIX = "/system/code/";
 
-    /**
-     * 跳转到代码生成首页
-     */
-    @RequestMapping("")
-    public String index() {
-        return PREFIX + "code.html";
-    }
+	/**
+	 * 跳转到代码生成首页
+	 */
+	@RequestMapping("")
+	public String index() {
+		return PREFIX + "code.html";
+	}
 
-    /**
-     * 代码生成
-     */
-    @ApiOperation("生成代码")
-    @RequestMapping(value = "/generate", method = RequestMethod.POST)
-    @ResponseBody
-    @Permission(Const.ADMIN_NAME)
-    public Object add(@ApiParam(value = "模块名称",required = true) @RequestParam  String moduleName,
-                      @RequestParam String bizChName,
-                      @RequestParam String bizEnName,
-                      @RequestParam String path) {
-        if (ToolUtil.isOneEmpty(bizChName, bizEnName)) {
-            throw new BussinessException(BizExceptionEnum.REQUEST_NULL);
-        }
-        ContextConfig contextConfig = new ContextConfig();
-        contextConfig.setBizChName(bizChName);
-        contextConfig.setBizEnName(bizEnName);
-        contextConfig.setModuleName(moduleName);
-        if (ToolUtil.isNotEmpty(path)) {
-            contextConfig.setProjectPath(path);
-        }
+	/**
+	 * 代码生成
+	 * 
+	 * @throws FileNotFoundException
+	 * @throws BeetlException
+	 */
+	@ApiOperation("生成代码")
+	@RequestMapping(value = "/generate", method = RequestMethod.POST)
+	@ResponseBody
+	@Permission(Const.ADMIN_NAME)
+	public Object add(@ApiParam(value = "模块名称", required = true) @RequestParam String moduleName,
+			@RequestParam String bizChName, @RequestParam String bizEnName, @RequestParam String path)
+			throws BeetlException, FileNotFoundException {
+		if (ToolUtil.isOneEmpty(bizChName, bizEnName)) {
+			throw new BussinessException(BizExceptionEnum.REQUEST_NULL);
+		}
+		ContextConfig contextConfig = new ContextConfig();
+		contextConfig.setBizChName(bizChName);
+		contextConfig.setBizEnName(bizEnName);
+		contextConfig.setModuleName(moduleName);
+		if (ToolUtil.isNotEmpty(path)) {
+			contextConfig.setProjectPath(path);
+		}
 
-        GunsTemplateEngine gunsTemplateEngine = new SimpleTemplateEngine();
-        gunsTemplateEngine.setContextConfig(contextConfig);
-        gunsTemplateEngine.start();
+		SimpleTemplateEngine gunsTemplateEngine = new SimpleTemplateEngine();
+		gunsTemplateEngine.setContextConfig(contextConfig);
+		gunsTemplateEngine.start();
 
-        return super.SUCCESS_TIP;
-    }
+		return super.SUCCESS_TIP;
+	}
 }

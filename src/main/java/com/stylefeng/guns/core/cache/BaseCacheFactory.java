@@ -15,7 +15,6 @@
  */
 package com.stylefeng.guns.core.cache;
 
-
 /**
  * 缓存工厂基类
  */
